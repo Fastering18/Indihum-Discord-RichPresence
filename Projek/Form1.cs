@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +19,7 @@ namespace Goblox
         private bool processed;
         public DiscordRpcClient client;
         public DiscordRPC.Button addbotButton;
-        public DiscordRPC.Button fuckmeButton;
+        public DiscordRPC.Button testButton;
 
         private void SetTextGenerateBTN(string text)
         {
@@ -98,13 +98,13 @@ namespace Goblox
             client.Initialize();
             addbotButton = new DiscordRPC.Button()
             {
-                Url = "https://goblox.web.app",
+                Url = "https://discord.com/api/oauth2/authorize?client_id=777756503028400138&permissions=11265&scope=bot",
                 Label = "Add Bot"
             };
-            fuckmeButton = new DiscordRPC.Button()
+            testButton = new DiscordRPC.Button()
             {
-                Url = "https://goblox.web.app",
-                Label = "Add Bot"
+                Url = "https://blackerz.herokuapp.com/servers/784909921522810930",
+                Label = "Fuck me"
             };
         }
       
@@ -112,12 +112,13 @@ namespace Goblox
         {
             if (debounce == true) return;
             debounce = true;
+            DiscordRPC.Button[] tombol = { addbotButton, testButton };
             client.SetPresence(new RichPresence()
             {
                 Details = InputDetail.Text == "" ? "Menjadi tolol" : InputDetail.Text,
                 State = InputState.Text,
-                Timestamps = new Timestamps() { Start = System.DateTime.Now },
-                //Buttons = {[0] = addbotButton, [1] = fuckmeButton },
+                Timestamps = DiscordRPC.Timestamps.Now,
+                Buttons = tombol,
                 Assets = new Assets()
                 {
                     LargeImageKey = "indihum2",
