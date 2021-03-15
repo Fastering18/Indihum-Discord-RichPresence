@@ -10,4 +10,4 @@ Download github this package as [ZIP](https://github.com/Fastering18/Indihum-Dis
 Open the `.exe` file on  `Indihum-Discord-RichPresence/src/Goblox.exe`  
 
 ## Contact developer  
-Join [Discord server](https://blackerz.herokuapp.com/servers/784909921522810930)<br>
+Join [Discord server](https://blackerz.herokuapp.com/servers/795942661163974656)<br>
